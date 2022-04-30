@@ -20,11 +20,15 @@ var connectionstring = configuration.GetValue<string>("connectionstring");
 Console.WriteLine($"Starting availability monitoring of {uri} every {frequency} seconds...");
 
 var client = new HttpClient();
-var telemetryClient = new TelemetryClient(new TelemetryConfiguration(connectionstring));
+var telemetryConfiguration = TelemetryConfiguration.CreateDefault();
+telemetryConfiguration.ConnectionString = connectionstring;
+var telemetryClient = new TelemetryClient(telemetryConfiguration);
 
 while (true)
 {
     var start = DateTimeOffset.UtcNow;
+    Console.WriteLine($"Health check {start}");
+
     try
     {
         var health = await client.GetFromJsonAsync<HealthEndpointData>(uri);
@@ -63,7 +67,7 @@ while (true)
     {
         var end = DateTimeOffset.UtcNow;
         telemetryClient.TrackAvailability(
-            name: "unhealthy",
+            name: "health",
             timeStamp: start,
             duration: end - start,
             runLocation: location,
