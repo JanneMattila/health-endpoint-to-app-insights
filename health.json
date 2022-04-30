@@ -1,0 +1,28 @@
+{
+  "status": "UP",
+  "components": {
+    "diskSpace": {
+      "status": "UP",
+      "details": {
+        "total": 1000,
+        "free": 200,
+        "threshold": 150
+      }
+    },
+    "cache": {
+      "status": "UP",
+      "details": {
+        "state": "Working correctly"
+      }
+    },
+    "api": {
+      "status": "UP",
+      "details": {
+        "address": "https://api.contoso.com/products"
+      }
+    },
+    "database": {
+      "status": "UP"
+    }
+  }
+}
