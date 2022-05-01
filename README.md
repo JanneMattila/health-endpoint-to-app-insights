@@ -26,3 +26,7 @@ echo $ai_connectionstring
 ## Links
 
 [Sprint Boot and Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints.health)
+
+[Java codeless application monitoring on-premises - Azure Monitor Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/java-on-premises)
+
+[Azure Monitor OpenTelemetry-based auto-instrumentation for Java applications](https://docs.microsoft.com/en-us/azure/azure-monitor/app/java-in-process-agent)
